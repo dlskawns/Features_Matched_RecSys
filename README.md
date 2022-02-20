@@ -41,9 +41,9 @@ keywords: '여성', 여자', '임산부', '출산', '생리', '미혼모' 등
 1) 개체명 인식기 예시 - 신청절차 태그(무관: A10:00, 온라인: A10-01, 오프라인: A10-02)  
  * 학습을 위한 데이터 전처리  
 ![image](https://user-images.githubusercontent.com/84971151/154800420-41704cbe-86fd-4aba-8b3a-f64b10d38a74.png)  
- * 1차 개체명 인식 학습 결과  
+ * 1차 개체명 인식 - 태그 그대로 추출(ex: A10-01)
 ![image](https://user-images.githubusercontent.com/84971151/154800427-9997449c-fa66-40c2-967c-03dff6e8994c.png)  
- * 2차 개체명 인식 및 키워드 치환 후 학습 결과   
+ * 2차 개체명 인식 - 키워드 치환 후 학습 결과   
 ![image](https://user-images.githubusercontent.com/84971151/154800550-9fbdfdf3-0804-4cb4-9436-4bf0de819085.png)  
 
 2) 개체명 인식 결과값을 Input, 키워드 추출 태그를 Label로 두어 Bert 모델 진행
@@ -63,13 +63,16 @@ keywords: '여성', 여자', '임산부', '출산', '생리', '미혼모' 등
 
 
 
-  - 추천 모델 B:
+  - 추천 모델 B: Wide and Deep
     - 모델 A를 통해 추려진 정책을 각 유저에 맞는지 여부(적합성)를 라벨로 두고 학습진행  
       - 적합성의 여부1: 유저의 관심정책에 해당하는 정책인가
       - 적합성의 여부2: 유저의 조건에 매칭이 되는 정책인가
-    - 딥러닝을 이용하는 모델 Wide & Deep을 이용해 Wide Part(Memorization)과 Deep Part(Generalization)을 적절히 섞은 추천모델 
+    - 딥러닝을 이용하는 모델 Wide & Deep을 이용해 Wide Part(Memorization)과 Deep Part(Generalization)을 적절히 섞은 추천모델  
     ㄴ> 먼저 추천모델 A를 활용 또는 추가적인 Retrieval 모듈을 이용한 Query 설정으로 시간적 효율 높일 수 있음 
+Wide and Deep Model  
+![image](https://user-images.githubusercontent.com/84971151/154828797-3cf7ba70-7484-4f93-8717-05f07138d083.png)  
 
+![image](https://user-images.githubusercontent.com/84971151/154828848-705850e5-bec2-4c24-ac97-1073415ce3ea.png)
 
 
   - 샘플 축소 모델: 샘플 수가 너무 많아 학습 진행에 어려움이 있었고, 이를 해결하기 위한 방법으로 아래 두 가지를 모델 A 이후 진행.  
