@@ -1,5 +1,5 @@
-# Codestates Project 2  
-## 기업 협업 프로젝트 - Context 태깅 모델 & 개인-정책 추천 모델 구축(With 웰로)
+
+## Context 태깅 모델 & 개인-정책 추천 모델 구축(With 웰로)
  
 ### 프로젝트 주제 및 목적
 <big>Context 태깅 모델 & 개인-정책 추천 모델 구축</big>
